@@ -53,6 +53,12 @@
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
         
+        // テクスチャー読み込み
+        var textureLoader1 = new THREE.TextureLoader();  
+        var texture1 = textureLoader1.load("img/img6.png");
+        var mat1 = new THREE.MeshPhongMaterial();
+        mat.map = texture;
+        
         // バンプマップ読み込み
         var bump = textureLoader.load("stone-bump.jpg");
         mat.bumpMap = bump;
@@ -68,7 +74,7 @@
 
         // 球を作成
         var geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
-        var Sphere = new THREE.Mesh(geometry2, mat);
+        var Sphere = new THREE.Mesh(geometry2, mat1);
         Sphere.position.set(0,0,0);
         scene.add(Sphere);
 
